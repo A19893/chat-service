@@ -12,16 +12,6 @@ const {
 
 const router = express.Router();
 
-// router.get("/", protect, (req, res) => {
-//   res.send(chats);
-// });
-
-router.get("/:id", protect, (req, res) => {
-  const id = req.params.id;
-  const chat = chats.find((chat) => chat._id === id);
-  res.send(chat);
-});
-
 router.route("/").post(protect, createChat).get(protect, fetchChats);
 router.route("/group").post(protect, createGroupChat);
 router.route("/rename").put(protect, renameGroup);
