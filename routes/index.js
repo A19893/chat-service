@@ -1,4 +1,5 @@
 module.exports = {
     userRoutes: require('./userRoute'),
-    chatRoutes: require('./chatRoute')
+    chatRoutes: require('./chatRoute'),
+    messageRoutes: require('./messageRoute')
 }

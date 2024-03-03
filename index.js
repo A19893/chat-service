@@ -2,7 +2,7 @@ require("dotenv").config();
 require("colors");
 const express = require("express");
 const cors = require("cors");
-const { userRoutes, chatRoutes } = require("./routes");
+const { userRoutes, chatRoutes, messageRoutes } = require("./routes");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 const app = express();
 
@@ -14,7 +14,7 @@ require("./config/dbConfig");
 
 app.use("/api/user", userRoutes);
 app.use('/api/chats', chatRoutes);
-
+app.use("/api/message", messageRoutes);
 app.use(notFound);
 app.use(errorHandler);
 app.listen(process.env.APP_PORT, function () {
